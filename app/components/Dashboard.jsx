@@ -1,25 +1,32 @@
 'use client';
 
 export default function Dashboard() {
+  const handleNavigation = (page) => {
+    if (page === 'logout') {
+      window.location.href = '/login';
+    }
+    // You can add more navigation logic here for other pages
+  };
+
   return (
     <div className="container">
       {/* Left Sidebar with Providers */}
       <div className="sidebar">
         <h3>HEALTH</h3>
         <ul>
-          <li>Dashboard</li>
-          <li>My Profile</li>
-          <li>Providers</li>
-          <li>Messages</li>
-          <li>Wellness Goals</li>
-          <li>Logout</li>
+          <li onClick={() => handleNavigation('dashboard')}>Dashboard</li>
+          <li onClick={() => handleNavigation('profile')}>My Profile</li>
+          <li onClick={() => handleNavigation('providers')}>Providers</li>
+          <li onClick={() => handleNavigation('messages')}>Messages</li>
+          <li onClick={() => handleNavigation('wellness')}>Wellness Goals</li>
+          <li onClick={() => handleNavigation('logout')}>Logout</li>
         </ul>
       </div>
 
       {/* Main Content */}
       <div className="main-content">
         <div className="header">
-          <h1>Welcome,</h1>
+          <h1>Welcome</h1>
         </div>
 
         <div className="wellness-section">
